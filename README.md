@@ -4,6 +4,9 @@ This repository exists for easy replication of a bug with the video camera / vid
 ## Bug Description
 Opening the camera on iOS Safari results in a non-displaying video stream if using Blaze. If React is used, the video is displaying as expected. Tested on an iPad Air 2 with iOS version 14.4.2. Also tested on an iPhone X with iOS version 14.6 yielding same error. Interestingly, the error was *not* present on an iPhone 11 with iOS version 14.2. After updating this iPhone to iOS 14.6, the error appeared. So it has to do something with the camera permission requesting / video element within Blaze and with a change that appeared within iOS version 14.2 and 14.4.2.
 
+## Workaround
+As a workaround the `<video>` element needs to be added to the DOM via JavaScript directly. The `test-meteor-blaze` project shows the workaround in [`test-meteor-blaze/imports/workaround.js`](test-meteor-blaze/imports/workaround.js).
+
 ## Bug Replication
 There is also a "plain" HTML version in `test-html` which also seems to work.
 
